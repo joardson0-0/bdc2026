@@ -42,4 +42,18 @@ inner join cliente on venda.id_cliente = cliente.id_cliente
 where status_venda in ("Cancelada", "Concluida")
 order by preco_unitario_venda ASC;
 
+use venda_informatica;
+update cliete set cidade ='senailandia' where estado in ("DF","ES");
+
+update ciente set data_cadastro ="2026-01-01" WHERE cidade in ("manaus");
+
+update cliente set nome_clinte = "micheal jackson" where id_cliente in (10);
+
+update produto set nome_produto = "carro voador" where id_produto in (1);
+
+update produto set preco_unitario = 5,000 where marca in (1);
+
+update venda set desconto_persentual = 0.01 where quantidade in (1);
+
+
 
