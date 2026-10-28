@@ -105,7 +105,17 @@ insert into venda (
     desconto_percentual,
     forma_pagamento,
     status_venda
-)
-select p.id_produto, c.id_cliente,'2026-10-21',10,p.preco_unitario,1.33,'PIX''concluida'
-from produto inner join cliente on c.email = 'ruber.sesi@gmail.com' where p.nome_produto = 'mouse pad 5pol'
-and p.marca = 'linux';
+) select
+    p.id_produto,
+    c.id_cliente,
+    '2026-10-21',
+    10,
+    p.preco_unitario,
+    1.33,
+    'PIX',
+    'Concluída'
+from Produto 
+Inner join Cliente 
+on c.email = 'ruber.sesi@gmail.com'
+where p.nome_produto = 'Mouse Pad 5POL'
+and p.marca = 'Lumix';
