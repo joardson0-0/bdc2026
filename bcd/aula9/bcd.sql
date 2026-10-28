@@ -55,5 +55,57 @@ update produto set preco_unitario = 5,000 where marca in (1);
 
 update venda set desconto_persentual = 0.01 where quantidade in (1);
 
+use venda_informatica;
 
+delete from Cliente where id_cliente = 5;
 
+delete from Cliente where estado = 'SC';
+
+delete from Produto where marca = 'LG';
+
+delete from Produto where id_produto IN (3, 5, 10);
+
+delete from Venda where desconto_percentual = 0;
+
+delete from Venda where status_venda = 'Cancelada';
+
+insert into cliente (nome_cliente,email,cidade,estado,data_cadastro) 
+  value (
+    'Rubervaldo Sesiano',
+    'ruber.sesi@gmail.com',
+    'Jaguaríuna',
+    'SP',
+  curdate() 
+);
+
+insert into produto(
+    nome_produto,
+    categoria,
+    marca,
+    preco_unitario,
+    estoque,
+    ativo,
+    data_cadastro
+) value (
+    'Mouse Pad 5POL',
+    'Acessórios',
+    'Lumix',
+    59.98,
+    35,
+    1,
+  CURDATE()
+);
+
+insert into venda (
+    id_produto,
+    id_cliente,
+    data_venda,
+    quantidade,
+    preco_uitario_venda,
+    desconto_percentual,
+    forma_pagamento,
+    status_venda
+)
+select p.id_produto, c.id_cliente,'2026-10-21',10,p.preco_unitario,1.33,'PIX''concluida'
+from produto inner join cliente on c.email = 'ruber.sesi@gmail.com' where p.nome_produto = 'mouse pad 5pol'
+and p.marca = 'linux';
